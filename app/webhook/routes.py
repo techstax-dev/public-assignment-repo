@@ -1,4 +1,5 @@
 from flask import Blueprint, json, request
+from flask import Flask
 
 webhook = Blueprint('Webhook', __name__, url_prefix='/webhook')
 
