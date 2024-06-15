@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webhook Logs</title>
+    <script>
+        async function fetchLogs() {
+            const response = await fetch('/webhook/logs');
+            const logs = await response.json();
+            const logContainer = document.getElementById('logs');
+            logContainer.innerHTML = '';
+            logs.forEach(log => {
+                const logElement = document.createElement('p');
+                logElement.textContent = `${log.author} ${log.action} from ${log.from_branch} to ${log.to_branch} on ${log.timestamp}`;
+                logContainer.appendChild(logElement);
+            });
+        }
+
+        setInterval(fetchLogs, 15000);
+        window.onload = fetchLogs;
+    </script>
+</head>
+<body>
+    <h1>Webhook Logs</h1>
+    <div id="logs"></div>
+</body>
+</html>
