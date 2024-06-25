@@ -15,14 +15,13 @@ z
 x
 ```
 
-* Create the virtual env
+* Create the virtual envs
 
 ```bash
 virtualenv venv
-```
-
+```ss
 * Activate the virtual env
-
+ss
 ```bash
 source venv/bin/activate
 ```
