@@ -8,15 +8,13 @@ Please use this repository for constructing the Flask webhook receiver.
 
 * Create a new virtual environment
 
-```bash
-pip install virtualenvx
+```bashS
+pip install virtualenvxS
 z
 z
-x
-```
-
-* Create the virtual envs
-
+xS
+* Create the virtual envsS
+S
 ```bash
 virtualenv venv
 ```ss
