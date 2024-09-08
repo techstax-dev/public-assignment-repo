@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Webhook Events</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .event {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+    </style>
+    <script>
+        setTimeout(() => {
+            window.location.reload();
+        }, 15000);
+    </script>
+</head>
+<body>
+    <h1>Recent GitHub Webhook Events</h1>
+    {% for event in events %}
+        <div class="event">
+            <p>{{ event['author'] }} {{ event['action'] }} to {{ event['to_branch'] }} on {{ event['timestamp'] }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
